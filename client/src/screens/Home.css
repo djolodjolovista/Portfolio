@@ -1,5 +1,115 @@
 .homeCanvas {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 400px;
     max-width: 100%;
+    background-image: url("../images/portfolio.jpg");
+    
+}
+
+.homeContainer{
+    background-color: white;
+    padding-top: 4vmax;
+    border-radius: 0 0 200px 200px;
+    border-bottom: 200px solid white;
+    position: relative;
+    z-index: 1;
+}
+ 
+.homeContainer > h3 { /*selektuj sve h3 el. gdje je roditelj homeContainer*/
+text-align: center;
+color: black;
+padding: 4vmax;
+}
+
+.homeSkills {
+    transform: translateY(-200px);
+    background-color: hsl(219, 48%, 8%);
+    height: 1500px;
+    position: relative;
+    margin-bottom: -200px;
+    padding: 200px;
+    box-sizing: border-box;
+    perspective: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.homeSkills > h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 4vmax;
+    font-size: 4vmax;
+}
+
+.homeCubeSkills {
+    width: 150px;
+    height: 150px;
+    animation: cubeRotation 15s linear infinite alternate; /*linear-animacija ima istu brzinu od pocetka do kraja*/
+    /*infinite- ponavlja beskonačno puta*/
+    /*alternate- direkcija animacije u oba pravca naprijed i nazad*/
+    transform-style: preserve-3d; /*specificira da el. dijete sacuva svoju 3d poziciju*/
+}
+
+.homeCubeSkillsFaces {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0.7; /*prozirnost*/
+}
+
+.homeCubeSkillsFaces > img {
+    width: inherit;
+    height: inherit; /*nasleđuje od roditelja*/
+}
+
+.homeCubeSkillsFace1 {
+    transform: translate3d(0, 0, 105px);/*pomjera objekat 0px po X osi, 0px po Y osi i 150px po Z osi*/
+}
+
+.homeCubeSkillsFace2 {
+    transform: rotateY(180deg) translate3d(0, 0, 105px); /*rotateY - rotira objekat oko Y ose bez deformisanja*/
+}
+
+.homeCubeSkillsFace3 {
+    transform: rotateY(-90deg) translate3d(0, 0, 105px);
+}
+
+.homeCubeSkillsFace4 {
+    transform: rotateY(90deg) translate3d(0, 0, 105px);
+}
+
+.homeCubeSkillsFace5 {
+    transform: rotateX(90deg) translate3d(0, 0, 105px);
+}
+
+.homeCubeSkillsFace6 {
+    transform: rotateX(-90deg) translate3d(0, 0, 105px);
+}
+
+.cubeShadow {
+    width: 200px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.171);
+    border-radius: 50%;
+    animation: cubeShadow 1s ease-in-out infinite alternate;/*ease-in-out -animacija ima spor start i spor kraj*/
+    filter: blur(3px); /*zamućenje*/
+}
+
+@keyframes cubeShadow {
+    to {
+        transform: scale(1.2) translateY(-10px);
+    }
+}
+
+@keyframes cubeRotation { /*koristi se kod animacije*/
+    to {
+        transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
+    }
 }
