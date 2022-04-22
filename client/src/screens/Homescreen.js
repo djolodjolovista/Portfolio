@@ -9,6 +9,20 @@ import js from '../images/javascript.png'
 import php from '../images/php.png';
 import mongo from '../images/mongodb.png';
 import c_sharp from '../images/c_sharp.png';
+import {
+  SiReact, 
+  SiJavascript, 
+  SiNodedotjs, 
+  SiExpress, 
+  SiCss3, 
+  SiHtml5,
+  SiPhp, 
+  SiC, 
+  SiCsharp, 
+  SiMysql, 
+  SiGit, 
+  SiGithub,
+  SiMongodb} from 'react-icons/si';
 //import {TimeLine} from '../components/TimeLine';
 
 
@@ -18,7 +32,16 @@ const Homescreen = () => {
     useEffect(() => {
      
       
+      window.addEventListener('scroll', () =>{
+        const skillBox = document.getElementById('homeSkillsBox')
 
+        if(window.scrollY >= 1000){
+          skillBox.style.animationName='homeSkillsBoxAnimationOn';
+        }
+        else{
+          skillBox.style.animationName = 'homeSkillsBoxAnimationOff';
+        }
+      })
       
     }, [])
     
@@ -60,6 +83,22 @@ const Homescreen = () => {
 
           </div>
           <div className='cubeShadow'></div>
+          <div className='homeSkillsBox' id='homeSkillsBox'>
+            <SiC />
+            <SiCsharp />
+            <SiHtml5 />
+            <SiCss3 />
+            <SiJavascript />
+            <SiReact />
+            <SiNodedotjs />
+            <SiExpress />
+            <SiPhp />
+            <SiMongodb />
+            <SiMysql />
+            <SiGit />
+            <SiGithub />
+
+          </div>
         </div>
         
         

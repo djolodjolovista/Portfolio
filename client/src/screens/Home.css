@@ -102,6 +102,32 @@ padding: 4vmax;
     filter: blur(3px); /*zamućenje*/
 }
 
+.homeSkillsBox {
+    margin-top: 300px;
+    background-color: hsl(250, 100%, 75%);
+    padding: 0 2vmax;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: -300px;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    border-radius: 25px;
+    
+}
+
+.homeSkillsBox > svg {
+    font-size: 5vmax;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    margin: 10px;
+}
+
+.homeSkillsBox > svg:hover {
+    transform: scale(1.2); /*Uveća element*/
+}
+
 @keyframes cubeShadow {
     to {
         transform: scale(1.2) translateY(-10px);
@@ -112,4 +138,23 @@ padding: 4vmax;
     to {
         transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
     }
+}
+
+@keyframes homeSkillsBoxAnimationOn {
+    from{
+        right: -300px;
+    }
+    to{
+        right: 40px;
+    }
+}
+
+@keyframes homeSkillsBoxAnimationOff {
+    from{
+        right: 40px;
+    }
+    to{
+        right: -300px;
+    }
+    
 }
