@@ -1,0 +1,149 @@
+.projects {
+    background-color: hsl(219, 48%, 8%);
+    min-height: 100vh;
+    padding-top: 15vmax;
+}
+
+.projects > h3 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    background-color: hsl(250, 100%, 75%);
+    padding: 2vmax 4vmax;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, -100vh);
+    animation: projectsHeadingAnimation 1s ease-in-out forwards;
+    
+}
+
+.projects > h3 > svg {
+    margin: 1vmax;
+}
+
+.projectWrapper {
+    border-top: 100px solid white;
+    border-radius: 300px 300px 0 0;
+    min-height: inherit;
+    background-color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5vmax;
+    padding-bottom: 10vmax;
+    overflow-x: hidden;
+}
+
+.projectCard{
+    width: 80%;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.712);
+    margin: 2vmax;
+    border-radius: 10px;
+    display: flex;
+    transform: translateX(-100vw);/*translacija po x osi*/
+    animation: projectCardAnimation 1s ease-in-out forwards 0.5s;/*0.5s nakon učitavanja stranice animacija se pokreće*/
+}
+
+.projectCard:nth-child(even) { /*:nth-child- selektuje el. na osnovu njihove pozicije u grupi koju čine siblings*/
+ /*even- znači el. sa pozicijom parnog broja*/
+    transform: translateX(100vw);
+    flex-direction: row-reverse; /*u flex container-u elementi smješteni u red ali u obrnutom redoslijedu*/
+    animation: projectCardAnimation 1s ease-in-out forwards 0.5s;
+}
+
+.projectCard > div {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+    justify-content: space-around;
+}
+
+.projectCard > div:first-child:after{
+    content: "VIEW DEMO";
+}
+
+.projectCard > div:first-child > h5 {
+    text-align: center;
+    padding: 2vmax;
+}
+
+.projectCard > div:last-child {
+    padding: 3vmax;
+}
+
+.projectCard > div:last-child > h4 {
+    text-align: center;
+}
+
+.projectCard > div:last-child > p {
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    text-align: right;
+}
+
+.projectCard > div:last-child > h6 {
+    font-family: "Ubuntu Mono";
+    font-weight: bold;
+    color: black;
+}
+
+.projectCard > div > img {
+    width: 200px;
+}
+
+.projectCard:hover > div > img {
+    filter: hue-rotate(240deg) blur(4px);
+}
+
+@keyframes projectCardAnimation {
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes projectsHeadingAnimation {
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+    
+}
+
+@media  screen and (max-width:600px) {
+    .projectCard{
+        flex-direction: column;
+    }
+
+    .projectCard > div {
+        justify-content: center;
+    }
+
+    .projectCard > div:last-child > p{
+        text-align: center;
+    }
+
+    .projects > h3 {
+        animation: projectsHeadingAnimationMobile 1s ease-in-out forwards;
+    }
+
+    .projectCard:nth-child(even){
+        flex-direction: column;
+    }
+    
+}
+
+@keyframes projectsHeadingAnimationMobile {
+
+    to{
+        transform: translate(-50%, -20%);
+    }
+    
+}
