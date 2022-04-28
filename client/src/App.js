@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Aboutscreen from './screens/Aboutscreen';
 import Contactscreen from './screens/Contactscreen';
 import Homescreen from './screens/Homescreen';
+import Loginscreen from './screens/Loginscreen';
 import Projectsscreen from './screens/Projectsscreen';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/about' element={<Aboutscreen />} />
         <Route path='/projects' element={<Projectsscreen />} />
         <Route path='/contact' element={<Contactscreen />} />
+        <Route path='/account' element={<Loginscreen />} />
       </Routes>
       <Footer />
     </Router>

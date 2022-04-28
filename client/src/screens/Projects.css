@@ -65,9 +65,7 @@
     justify-content: space-around;
 }
 
-.projectCard > div:first-child:after{
-    content: "VIEW DEMO";
-}
+
 
 .projectCard > div:first-child > h5 {
     text-align: center;
@@ -85,7 +83,7 @@
 .projectCard > div:last-child > p {
     letter-spacing: 5px;
     word-spacing: 5px;
-    text-align: right;
+    text-align: center;
 }
 
 .projectCard > div:last-child > h6 {

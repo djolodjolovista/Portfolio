@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Link, Typography} from '@mui/material';
+import {Button, Typography} from '@mui/material';
 import {BsGithub} from 'react-icons/bs';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (

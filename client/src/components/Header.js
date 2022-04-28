@@ -23,6 +23,7 @@ const Header = () => {
     link2Url = "/about"
     link3Url = "/projects"
     link4Url = "/contact"
+    profileIconUrl = "/account"
     link1ColorHover = "white"
     link1Color = "hsl(250, 100%, 75%)"
     link1Size = "1.5rem"

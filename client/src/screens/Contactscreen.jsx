@@ -1,5 +1,5 @@
 import { Button, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
 
 const Contactscreen = () => {
@@ -11,6 +11,12 @@ const Contactscreen = () => {
         e.preventDefault();//sprječava reload/refresh browser-a
  
     }
+
+    useEffect(() => {
+      window.scrollTo(0,0); /**Nakon rendera stranice da scroll bude na nuli */
+    
+    }, [])
+    
 
   return (
     <div className='contact'>
